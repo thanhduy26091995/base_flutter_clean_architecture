@@ -5,6 +5,7 @@ class AppColor {
   static const background = Color(0xffeceff1);
 
   // Black
+  static const black = Color(0x00000000);
   static const black333 = Color(0xff333333);
   static const black454 = Color(0xff545454);
 }
