@@ -73,6 +73,3 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 - The project structure and architecture are inspired by Clean Architecture principles and the GetX package.
 - Special thanks to the Flutter community for valuable insights and contributions.
 
----
-
-Feel free to tailor this template based on the specifics of your project. Update placeholders such as `your_username` and `your_project` with the appropriate information.
