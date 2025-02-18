@@ -1,3 +1,4 @@
+import 'package:base_flutter_clean_architecture/app/config/app_route.dart';
 import 'package:base_flutter_clean_architecture/app/config/app_text.dart';
 import 'package:base_flutter_clean_architecture/domain/entity/album_dto.dart';
 import 'package:base_flutter_clean_architecture/presentation/album/album_controller.dart';
@@ -21,25 +22,32 @@ class AlbumPage extends GetView<AlbumController> {
             child: ListView.builder(
                 itemCount: controller.albumList.length,
                 itemBuilder: (context, index) {
-                  return _albumItem(controller.albumList[index]);
+                  return _albumItem(controller.albumList[index], (album) {
+                    // Navigate to Album detail
+                    Get.toNamed(AppRoute.albumDetail,
+                        arguments: {"albumId": album.id});
+                  });
                 }),
           ),
         ));
   }
 
-  Widget _albumItem(AlbumDTO albumDTO) {
-    return Card(
-      elevation: 5,
-      margin: const EdgeInsets.all(8.0),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppText.primary("UserId: ${albumDTO.userId}"),
-            AppText.primary("Id: ${albumDTO.id}"),
-            AppText.primaryButton("Title: ${albumDTO.title}"),
-          ],
+  Widget _albumItem(AlbumDTO albumDTO, Function(AlbumDTO) onAlbumClicked) {
+    return InkWell(
+      onTap: () => onAlbumClicked(albumDTO),
+      child: Card(
+        elevation: 5,
+        margin: const EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText.primary("UserId: ${albumDTO.userId}"),
+              AppText.primary("Id: ${albumDTO.id}"),
+              AppText.primaryButton("Title: ${albumDTO.title}"),
+            ],
+          ),
         ),
       ),
     );

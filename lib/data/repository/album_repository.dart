@@ -13,4 +13,10 @@ class AlbumRepository implements IAlbumRepository {
     final response = await _albumDataSource.getAlbumList();
     return response.map((e) => AlbumMapper.toAlbumDTO(response: e)).toList();
   }
+
+  @override
+  Future<AlbumDTO> getAlbumDetail(int albumId) async {
+    final response = await _albumDataSource.getAlbumDetail(albumId);
+    return AlbumMapper.toAlbumDTO(response: response);
+  }
 }

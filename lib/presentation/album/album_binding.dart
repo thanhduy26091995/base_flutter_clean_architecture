@@ -1,4 +1,4 @@
-import 'package:base_flutter_clean_architecture/di/client_module.dart';
+ import 'package:base_flutter_clean_architecture/di/client_module.dart';
 import 'package:base_flutter_clean_architecture/di/datasource_module.dart';
 import 'package:base_flutter_clean_architecture/di/repository_module.dart';
 import 'package:base_flutter_clean_architecture/di/session_provider_module.dart';

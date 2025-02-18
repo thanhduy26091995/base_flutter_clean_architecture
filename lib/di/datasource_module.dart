@@ -4,6 +4,6 @@ import 'package:base_flutter_clean_architecture/di/transformer_module.dart';
 
 mixin DataSourceModule on ClientModule, TransformerModule {
   AlbumDataSource get albumDataSource {
-    return AlbumDataSource(apiClient, albumTransformer);
+    return AlbumDataSource(apiClient);
   }
 }

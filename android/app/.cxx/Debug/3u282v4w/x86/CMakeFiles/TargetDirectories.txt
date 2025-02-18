@@ -1,0 +1,2 @@
+D:/Working/FlutterSource/base_flutter_clean_architecture/android/app/.cxx/Debug/3u282v4w/x86/CMakeFiles/edit_cache.dir
+D:/Working/FlutterSource/base_flutter_clean_architecture/android/app/.cxx/Debug/3u282v4w/x86/CMakeFiles/rebuild_cache.dir
